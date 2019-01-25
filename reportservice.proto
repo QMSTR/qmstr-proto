@@ -1,0 +1,37 @@
+syntax = "proto3";
+package service;
+option java_package = "org.qmstr.grpc.service";
+
+import weak "qmstr/service/bom.proto";
+
+message ReporterConfigRequest {
+  int32 reporterID = 1;
+}
+
+message ReporterConfigResponse {
+  string session = 1;
+  map<string, string> configMap = 2;
+  string name = 4;
+}
+
+message InfoDataRequest {
+  string rootID = 1;
+  string infotype = 2;
+  string datatype = 3;
+}
+
+message InfoDataResponse {
+  repeated string data = 1;
+}
+
+message BOMRequest {
+  bool warnings = 1;
+  bool errors = 2;
+  string session = 3;
+}
+
+service ReportService {
+  rpc GetReporterConfig(ReporterConfigRequest) returns (ReporterConfigResponse) {}
+  rpc GetInfoData(InfoDataRequest) returns (InfoDataResponse) {}
+  rpc GetBOM(BOMRequest) returns (BOM) {}
+}
