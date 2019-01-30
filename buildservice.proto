@@ -2,7 +2,7 @@ syntax = "proto3";
 package service;
 option java_package = "org.qmstr.grpc.service";
 
-import weak "qmstr/service/datamodel.proto";
+import weak "datamodel.proto";
 
 message BuildResponse {
   bool success = 1;
