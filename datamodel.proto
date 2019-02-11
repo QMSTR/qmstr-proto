@@ -18,6 +18,7 @@ message FileNode {
     bool broken = 7;
     repeated FileNode derivedFrom = 8;
     repeated InfoNode additionalInfo = 9;
+    repeated DiagnosticNode diagnosticInfo = 10;
 }
 
 message InfoNode {
@@ -33,6 +34,20 @@ message InfoNode {
         string data = 3;
     }
     repeated DataNode dataNodes = 6;
+}
+
+message DiagnosticNode {
+    string uid = 1;
+    string diagnosticNodeType = 2;
+    enum Severity {
+        UNDEF = 0;
+        INFO = 1;
+        WARNING = 2;
+        ERROR = 3;
+    }
+    Severity severity = 3;
+    string message = 4;
+    repeated Analyzer analyzer = 5;
 }
 
 message Analyzer {
@@ -55,6 +70,7 @@ message PackageNode {
     repeated FileNode targets = 5;
     repeated InfoNode additionalInfo = 6;
     string buildConfig = 7;
+    repeated DiagnosticNode diagnosticInfo = 8;
 }
 
 message Event {
