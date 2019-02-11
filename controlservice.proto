@@ -62,6 +62,7 @@ service ControlService {
   rpc SwitchPhase(SwitchPhaseMessage) returns (SwitchPhaseResponse) {}
   rpc GetPackageNode(PackageRequest) returns (PackageNode) {}
   rpc GetFileNode(FileNode) returns (stream FileNode) {}
+  rpc GetDiagnosticNode(DiagnosticNode) returns (stream DiagnosticNode) {}
   rpc Status(StatusMessage) returns (StatusResponse) {}
   rpc SubscribeEvents(EventMessage) returns (stream Event) {}
   rpc ExportSnapshot(ExportRequest) returns (ExportResponse) {}

@@ -31,6 +31,11 @@ message PackageNodeMessage {
     PackageNode packagenode = 2;
 }
 
+message DiagnosticNodeMessage {
+    int64 token = 1;
+    string uid = 2;
+    DiagnosticNode diagnosticnode =3;
+}
 message SendResponse {
     bool success = 1;
 }
@@ -40,4 +45,5 @@ service AnalysisService {
     rpc SendInfoNodes(stream InfoNodeMessage) returns (SendResponse) {}
     rpc SendFileNode(stream FileNodeMessage) returns (SendResponse) {}
     rpc SendPackageNode(stream PackageNodeMessage) returns (SendResponse) {}
+    rpc SendDiagnosticNode(stream DiagnosticNodeMessage) returns (SendResponse) {}
 }
