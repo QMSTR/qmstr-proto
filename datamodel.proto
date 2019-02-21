@@ -19,6 +19,7 @@ message FileNode {
     repeated FileNode derivedFrom = 8;
     repeated InfoNode additionalInfo = 9;
     repeated DiagnosticNode diagnosticInfo = 10;
+    repeated FileNode dependencies = 11;
 }
 
 message InfoNode {
