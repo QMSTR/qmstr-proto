@@ -73,6 +73,13 @@ message PackageNode {
     repeated DiagnosticNode diagnosticInfo = 8;
 }
 
+message ProjectNode {
+    string uid = 1;
+    string projectNodeType = 2;
+    repeated PackageNode packages = 3;
+    repeated InfoNode additionalInfo = 4;
+}
+
 message Event {
     EventClass class = 1;
     string message = 2;
