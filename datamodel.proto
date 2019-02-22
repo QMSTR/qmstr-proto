@@ -75,9 +75,10 @@ message PackageNode {
 
 message ProjectNode {
     string uid = 1;
-    string projectNodeType = 2;
-    repeated PackageNode packages = 3;
-    repeated InfoNode additionalInfo = 4;
+    string name = 2;
+    string projectNodeType = 3;
+    repeated PackageNode packages = 4;
+    repeated InfoNode additionalInfo = 5;
 }
 
 message Event {
