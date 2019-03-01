@@ -18,6 +18,10 @@ message PushFileResponse {
   string path = 1;
 }
 
+message DeleteMessage {
+  string uid = 1;
+}
+
 service BuildService {
   rpc Build(stream FileNode) returns (BuildResponse) {}
   rpc SendBuildError(InfoNode) returns (BuildResponse) {}
@@ -25,4 +29,5 @@ service BuildService {
   rpc Package(stream FileNode) returns (BuildResponse) {} 
   rpc CreatePackage(PackageNode) returns (BuildResponse) {}
   rpc CreateProject(ProjectNode) returns (BuildResponse) {}
+  rpc DeleteNode(stream DeleteMessage) returns (BuildResponse){}
 }
