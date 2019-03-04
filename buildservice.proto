@@ -23,4 +23,6 @@ service BuildService {
   rpc SendBuildError(InfoNode) returns (BuildResponse) {}
   rpc PushFile(PushFileMessage) returns (PushFileResponse) {}
   rpc Package(stream FileNode) returns (BuildResponse) {} 
+  rpc CreatePackage(PackageNode) returns (BuildResponse) {}
+  rpc CreateProject(ProjectNode) returns (BuildResponse) {}
 }
