@@ -29,9 +29,6 @@ message SwitchPhaseResponse {
   string error = 2;
 }
 
-message PackageRequest {
-}
-
 message StatusMessage {
   bool phase = 1;
   bool switch = 2;
@@ -60,7 +57,7 @@ service ControlService {
   rpc Log(LogMessage) returns (LogResponse) {}
   rpc Quit(QuitMessage) returns (QuitResponse) {}
   rpc SwitchPhase(SwitchPhaseMessage) returns (SwitchPhaseResponse) {}
-  rpc GetPackageNode(PackageRequest) returns (PackageNode) {}
+  rpc GetPackageNode(PackageNode) returns (PackageNode) {}
   rpc GetFileNode(FileNode) returns (stream FileNode) {}
   rpc GetDiagnosticNode(DiagnosticNode) returns (stream DiagnosticNode) {}
   rpc Status(StatusMessage) returns (StatusResponse) {}
