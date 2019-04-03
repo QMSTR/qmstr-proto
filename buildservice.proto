@@ -20,6 +20,7 @@ message PushFileResponse {
 
 message DeleteMessage {
   string uid = 1;
+  string edge = 2;
 }
 
 service BuildService {
@@ -31,4 +32,5 @@ service BuildService {
   rpc CreateProject(ProjectNode) returns (BuildResponse) {}
   rpc GetProjectNode(ProjectNode) returns (ProjectNode) {}
   rpc DeleteNode(stream DeleteMessage) returns (BuildResponse){}
+  rpc DeleteEdge(DeleteMessage) returns (BuildResponse) {}
 }
