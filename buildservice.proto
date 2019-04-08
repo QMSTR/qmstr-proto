@@ -29,6 +29,5 @@ service BuildService {
   rpc Package(stream FileNode) returns (BuildResponse) {} 
   rpc CreatePackage(PackageNode) returns (BuildResponse) {}
   rpc CreateProject(ProjectNode) returns (BuildResponse) {}
-  rpc GetProjectNode(ProjectNode) returns (ProjectNode) {}
   rpc DeleteNode(stream DeleteMessage) returns (BuildResponse){}
 }

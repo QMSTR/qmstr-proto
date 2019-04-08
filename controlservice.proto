@@ -57,6 +57,7 @@ service ControlService {
   rpc Log(LogMessage) returns (LogResponse) {}
   rpc Quit(QuitMessage) returns (QuitResponse) {}
   rpc SwitchPhase(SwitchPhaseMessage) returns (SwitchPhaseResponse) {}
+  rpc GetProjectNode(ProjectNode) returns (ProjectNode) {}
   rpc GetPackageNode(PackageNode) returns (PackageNode) {}
   rpc GetFileNode(FileNode) returns (stream FileNode) {}
   rpc GetDiagnosticNode(DiagnosticNode) returns (stream DiagnosticNode) {}
