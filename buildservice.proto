@@ -23,13 +23,18 @@ message DeleteMessage {
   string edge = 2;
 }
 
+message ProjectMessage {
+  ProjectNode project = 1;
+  bool update = 2;
+}
+
 service BuildService {
   rpc Build(stream FileNode) returns (BuildResponse) {}
   rpc SendBuildError(InfoNode) returns (BuildResponse) {}
   rpc PushFile(PushFileMessage) returns (PushFileResponse) {}
   rpc Package(stream FileNode) returns (BuildResponse) {} 
   rpc CreatePackage(PackageNode) returns (BuildResponse) {}
-  rpc CreateProject(ProjectNode) returns (BuildResponse) {}
+  rpc CreateProject(ProjectMessage) returns (BuildResponse) {}
   rpc UpdateProjectNode(stream PackageNode) returns (BuildResponse) {}
   rpc GetProjectNode(ProjectNode) returns (ProjectNode) {}
   rpc DeleteNode(stream DeleteMessage) returns (BuildResponse){}
